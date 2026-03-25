@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>The Woman in the Reflection</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+        <style>
+            :root {
+                --ink: #1c1512;
+                --ink-soft: #4a3e38;
+                --parchment: #faf7f3;
+                --rose: #c2705a;
+                --rose-deep: #a0503d;
+                --rose-pale: #f7eae6;
+                --gold: #b8944a;
+                --sage-pale: #ebf2ee;
+                --serif: "Cormorant Garamond", Georgia, serif;
+                --sans: "Jost", sans-serif;
+            }
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                background: var(--parchment);
+                color: var(--ink);
+                font-family: var(--sans);
+                font-weight: 400;
+                overflow-x: hidden;
+                /* display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center; */
+            }
+            .hero {
+                min-height: 100vh;
+                background: var(--ink);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 80px 24px 120px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .hero::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 120px;
+                background: linear-gradient(to bottom, transparent, var(--parchment));
+            }
+            .hero__glow {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(194, 112, 90, 0.2) 0%, transparent 70%);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+            }
+            .hero__eyebrow {
+                font-family: var(--sans);
+                font-size: 10px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: var(--rose);
+                margin-bottom: 28px;
+                animation: fadeUp 0.9s ease both;
+            }
+            .hero__title {
+                font-family: var(--serif);
+                font-size: clamp(3rem, 8vw, 6.5rem);
+                font-weight: 500;
+                line-height: 1.08;
+                color: #fff;
+                animation: fadeUp 0.9s 0.1s ease both;
+            }
+            .hero__title em {
+                color: var(--rose);
+                font-style: italic;
+            }
+            .hero__rule {
+                width: 1px;
+                height: 64px;
+                background: linear-gradient(to bottom, transparent, var(--rose), transparent);
+                margin: 36px auto;
+                animation: fadeUp 0.9s 0.2s ease both;
+            }
+            .hero__sub {
+                font-family: var(--serif);
+                font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+                font-weight: 400;
+                font-style: italic;
+                color: rgba(255, 255, 255, 0.6);
+                max-width: 540px;
+                line-height: 1.7;
+                animation: fadeUp 0.9s 0.3s ease both;
+            }
+            .chapter {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 80px 28px;
+            }
+            .prose {
+                font-family: var(--serif);
+                font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+                font-weight: 400;
+                line-height: 1.95;
+                color: var(--ink-soft);
+            }
+            .prose p {
+                margin-bottom: 1.6em;
+            }
+            .prose strong {
+                font-weight: 700;
+                color: var(--ink);
+            }
+            .prose .pull {
+                display: block;
+                font-family: var(--serif);
+                font-size: clamp(1.4rem, 3vw, 2rem);
+                font-style: italic;
+                font-weight: 400;
+                color: var(--rose);
+                text-align: center;
+                line-height: 1.4;
+                margin: 2.4em auto;
+                max-width: 560px;
+                padding: 0 12px;
+            }
+            .prose .pull::before,
+            .prose .pull::after {
+                content: "";
+                display: block;
+                width: 40px;
+                height: 1px;
+                background: var(--rose);
+                margin: 16px auto;
+                opacity: 0.4;
+            }
+            .chapter-label {
+                font-family: var(--sans);
+                font-size: 10px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: var(--gold);
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .chapter-hed {
+                font-family: var(--serif);
+                font-size: clamp(2rem, 5vw, 3.4rem);
+                font-weight: 500;
+                line-height: 1.2;
+                color: var(--ink);
+                text-align: center;
+                margin-bottom: 52px;
+            }
+            .chapter-hed em {
+                font-style: italic;
+                color: var(--rose);
+            }
+            .img-block {
+                max-width: 780px;
+                margin: 0 auto;
+                padding: 0 24px;
+            }
+            .img-block img {
+                width: 100%;
+                border-radius: 15px;
+                display: block;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(0, 0, 0, 0.12), 0 40px 80px rgba(0, 0, 0, 0.08);
+            }
+            .img-caption {
+                font-family: var(--sans);
+                font-size: 12px;
+                letter-spacing: 1px;
+                color: rgba(100, 80, 70, 0.45);
+                text-align: center;
+                margin-top: 14px;
+            }
+            .band-dark {
+                background: var(--ink);
+                position: relative;
+                overflow: hidden;
+            }
+            .band-dark::before {
+                content: "";
+                position: absolute;
+                top: -200px;
+                right: -200px;
+                width: 500px;
+                height: 500px;
+                background: radial-gradient(circle, rgba(184, 148, 74, 0.07) 0%, transparent 70%);
+                pointer-events: none;
+            }
+            .band-dark .chapter-label {
+                color: rgba(184, 148, 74, 0.8);
+            }
+            .band-dark .chapter-hed {
+                color: #fff;
+            }
+            .band-dark .chapter-hed em {
+                color: var(--rose);
+            }
+            .band-dark .prose {
+                color: rgba(255, 255, 255, 0.72);
+            }
+            .band-dark .prose strong {
+                color: #fff;
+            }
+            .band-dark .prose .pull {
+                color: var(--gold);
+            }
+            .band-dark .prose .pull::before,
+            .band-dark .prose .pull::after {
+                background: var(--gold);
+            }
+            .band-dark .img-caption {
+                color: rgba(255, 255, 255, 0.3);
+            }
+            .band-warm {
+                background: linear-gradient(160deg, var(--rose-pale) 0%, var(--parchment) 100%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;  
+                justify-content: center;
+            }
+            .band-transform {
+                background: linear-gradient(160deg, var(--sage-pale) 0%, var(--parchment) 100%);
+            }
+            .outcomes {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 16px;
+                margin: 48px 0;
+            }
+            .outcome-card {
+                background: #fff;
+                border: 1px solid rgba(122, 158, 139, 0.2);
+                border-radius: 12px;
+                padding: 28px 22px;
+                text-align: center;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .outcome-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 36px rgba(0, 0, 0, 0.09);
+            }
+            .outcome-icon {
+                font-size: 2rem;
+                margin-bottom: 12px;
+                display: block;
+            }
+            .outcome-card h4 {
+                font-family: var(--serif);
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--ink);
+                margin-bottom: 8px;
+            }
+            .outcome-card p {
+                font-family: var(--sans);
+                font-size: 0.85rem;
+                font-weight: 400;
+                color: var(--ink-soft);
+                line-height: 1.6;
+            }
+            .cta-section {
+                background: var(--ink);
+                padding: 100px 24px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .cta-section::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(194, 112, 90, 0.18) 0%, transparent 70%);
+                pointer-events: none;
+            }
+            .cta-section .chapter-label {
+                color: rgba(184, 148, 74, 0.8);
+            }
+            .cta-hed {
+                font-family: var(--serif);
+                font-size: clamp(2rem, 5vw, 3.5rem);
+                font-weight: 500;
+                color: #fff;
+                line-height: 1.2;
+                max-width: 640px;
+                margin: 0 auto 20px;
+            }
+            .cta-hed em {
+                font-style: italic;
+                color: var(--rose);
+            }
+            .cta-body {
+                font-family: var(--serif);
+                font-size: clamp(1rem, 2vw, 1.2rem);
+                font-weight: 400;
+                font-style: italic;
+                color: rgba(255, 255, 255, 0.6);
+                max-width: 480px;
+                margin: 0 auto 52px;
+                line-height: 1.75;
+            }
+            .cta-btn {
+                display: inline-block;
+                background: var(--rose);
+                color: #fff;
+                font-family: var(--sans);
+                font-size: clamp(0.95rem, 2vw, 1.1rem);
+                font-weight: 500;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 20px 56px;
+                border-radius: 60px;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 16px 48px rgba(160, 80, 61, 0.45);
+                transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+                animation: ctaPulse 3s 1.5s ease-in-out infinite;
+            }
+            .cta-btn::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+                transition: left 0.5s ease;
+            }
+            .cta-btn:hover::before {
+                left: 100%;
+            }
+            .cta-btn:hover {
+                background: var(--rose-deep);
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 0 24px 60px rgba(160, 80, 61, 0.55);
+                animation: none;
+            }
+            .cta-note {
+                font-family: var(--sans);
+                font-size: 11px;
+                letter-spacing: 1px;
+                color: rgba(255, 255, 255, 0.28);
+                margin-top: 20px;
+            }
+            .footer {
+                background: #111;
+                text-align: center;
+                padding: 24px;
+                font-family: var(--sans);
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.22);
+                letter-spacing: 0.5px;
+            }
+            .sr {
+                opacity: 0;
+                transform: translateY(36px);
+                transition: opacity 0.85s ease, transform 0.85s ease;
+            }
+            .sr.in {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .sr-d2 {
+                transition-delay: 0.2s;
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes ctaPulse {
+                0%,
+                100% {
+                    box-shadow: 0 16px 48px rgba(160, 80, 61, 0.4), 0 0 0 0 rgba(194, 112, 90, 0);
+                }
+                50% {
+                    box-shadow: 0 16px 48px rgba(160, 80, 61, 0.5), 0 0 0 12px rgba(194, 112, 90, 0);
+                }
+            }
+            @media (max-width: 600px) {
+                .chapter {
+                    padding: 60px 22px;
+                }
+                .outcomes {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .cta-btn {
+                    padding: 18px 36px;
+                }
+            }
+            @media (max-width: 380px) {
+                .outcomes {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="hero">
+            <div class="hero__glow"></div>
+            <p class="hero__eyebrow">A Personal Story</p>
+            <h1 class="hero__title">The Woman<br />in the <em>Reflection</em></h1>
+            <div class="hero__rule"></div>
+            <p class="hero__sub">I remember the exact moment I stopped recognizing myself.</p>
+        </section>
+
+        <div class="img-block sr" style="margin-top: 0">
+            <img src="1.png" alt="A woman standing before a mirror, looking down contemplatively" />
+            <p class="img-caption">The Tuesday everything changed.</p>
+        </div>
+
+        <article class="chapter sr">
+            <div class="prose">
+                <p>It wasn't during a major life event or a stressful holiday. It was a <strong>Tuesday</strong>. I was getting ready to run a quick errand, pulling on my favorite pair of jeans &mdash; the ones that had been in my closet for years, the ones that always felt like a warm hug.</p>
+                <p>And they didn't fit. I mean, they <em>really</em> didn't fit.</p>
+                <p>I ended up sitting on the edge of my bed, defeated, wrestling with the button. By the time I finally got it closed, I was out of breath. I looked in the mirror, and the person staring back at me wasn't me. She looked tired. She looked uncomfortable in her own skin. She looked&hellip;</p>
+                <span class="pull">stuck.</span>
+                <p>I used to have energy. I used to love getting dressed. Now, the highlight of my day was finding the biggest, baggiest shirt in my drawer to hide in.</p>
+            </div>
+        </article>
+
+        <section class="band-dark">
+            <article class="chapter sr">
+                <p class="chapter-label">Chapter Two</p>
+                <h2 class="chapter-hed">The <em>&ldquo;Tried Everything&rdquo;</em> Phase</h2>
+                <div class="img-block sr" style="padding: 0 0 52px">
+                    <img src="2.png" alt="Untouched salad bowl next to a laptop full of appointments" />
+                    <p class="img-caption">Maximum effort. Minimum results.</p>
+                </div>
+                <div class="prose">
+                    <p>I was the poster child for &ldquo;trying everything.&rdquo; I tried the keto thing &mdash; lived on eggs and avocado for months. I tried counting every single calorie, documenting every bite in an app like it was my second job. I even bought one of those workout programs that promised I'd see abs in 30 days.</p>
+                    <span class="pull">Spoiler: I did not.</span>
+                    <p>Sure, I'd lose a few pounds here and there, but it always came with a price. I was <strong>exhausted</strong>. My brain felt foggy. Getting through a workday was tough enough, but the thought of having the energy to play with my kids or go for a hike on the weekend? Impossible.</p>
+                    <p>The scale would creep back up, and it always seemed to land on my belly, hips, and thighs &mdash; the spots that just wouldn't budge, no matter how hard I worked.</p>
+                    <p>I was starting to believe that this was just what <strong>getting older felt like</strong>. That feeling self-conscious, hiding from the camera at family gatherings, and avoiding mirrors was my new normal.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="band-warm">
+            <article class="chapter sr">
+                <p class="chapter-label">Chapter Three</p>
+                <h2 class="chapter-hed">Then,<br />Something <em>Shifted.</em></h2>
+                <div class="prose">
+                    <p>But then, a few months ago, something shifted. And it wasn't because I suddenly developed superhuman willpower or started living at the gym.</p>
+                    <p>It started with a conversation about <em>why our bodies hold onto fat in the first place</em>. For the first time, someone explained that my struggles weren't a character flaw. It wasn't about my &ldquo;lack of discipline.&rdquo; It was about <strong>biology</strong>. Specifically, it was about the energy producers inside my cells.</p>
+                    <span class="pull">It wasn't about willpower.<br />It never was.</span>
+                    <p>That was the missing piece of the puzzle. I stopped fighting my body and started <strong>supporting it at a level I never even knew existed.</strong></p>
+                    <p>The results weren't just physical &mdash; they were total.</p>
+                </div>
+            </article>
+            <div class="sr sr-d2">
+                <a href="https://mitolyn.com/science/?hop=xxxxxxx&hopId=6057680c-9a6d-4e9d-85ee-ab8cf80bfc56&pg=science" class="cta-btn">&#10022;&nbsp;&nbsp;Show Me How She Did It</a>
+                <p class="cta-note">Join thousands of women who found their missing piece.</p>
+            </div>
+        </section>
+
+        <section class="band-transform">
+            <article class="chapter sr">
+                <div class="img-block sr" style="padding: 0 0 60px">
+                    <img src="3.png" alt="A woman laughing in golden light, confident and vibrant" />
+                    <p class="img-caption">A few months later.</p>
+                </div>
+                <p class="chapter-label">Chapter Four</p>
+                <h2 class="chapter-hed">The Results Were<br /><em>Total.</em></h2>
+                <div class="prose">
+                    <p>A few weeks later, I was getting ready for that same Tuesday errand. I pulled out the same pair of jeans. This time, they <strong>slipped on with ease</strong>. I didn't have to hold my breath. I didn't have to lay on the bed.</p>
+                    <span class="pull">I just&hellip; put them on.</span>
+                    <p>I stood in front of the same mirror, but this time, I didn't look away. My skin looked brighter. My eyes had that sparkle back. And yes, the stubborn fat around my middle that I had accepted as permanent? It was simply&hellip; <strong>gone.</strong></p>
+                </div>
+                <div class="outcomes sr">
+                    <div class="outcome-card">
+                        <span class="outcome-icon">&#10024;</span>
+                        <h4>Energy All Day</h4>
+                        <p>No more napping on weekends. Out there actually living.</p>
+                    </div>
+                    <div class="outcome-card">
+                        <span class="outcome-icon">&#127807;</span>
+                        <h4>Belly Fat &mdash; Gone</h4>
+                        <p>The stubborn spots I had accepted as permanent, finally shifting.</p>
+                    </div>
+                    <div class="outcome-card">
+                        <span class="outcome-icon">&#129704;</span>
+                        <h4>Confidence Back</h4>
+                        <p>I stopped hiding from cameras. I stopped avoiding mirrors.</p>
+                    </div>
+                    <div class="outcome-card">
+                        <span class="outcome-icon">&#128155;</span>
+                        <h4>Like Me Again</h4>
+                        <p>Light in body and spirit. The version of me I thought was gone forever.</p>
+                    </div>
+                </div>
+                <div class="prose sr">
+                    <p>But the best part? I had the energy to actually <strong>enjoy my life</strong>. I wasn't napping on weekends; I was out living. I felt light, not just on the scale, but in my spirit. The confidence I thought I'd lost forever came rushing back.</p>
+                    <span class="pull">For the first time in years,<br />I felt like <em>me</em> again.</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="cta-section">
+            <p class="chapter-label">Your Turn</p>
+            <h2 class="cta-hed sr">Now, You Have<br />a <em>Choice.</em></h2>
+            <p class="cta-body sr">
+                You can keep believing that the &ldquo;tried everything&rdquo; phase is your final destination.<br />
+                You can keep wrestling with the button on your favorite jeans.<br /><br />
+                Or, you can find out what I discovered.
+            </p>
+            <div class="sr sr-d2">
+                <a href="https://mitolyn.com/science/?hop=xxxxxxx&hopId=6057680c-9a6d-4e9d-85ee-ab8cf80bfc56&pg=science" class="cta-btn">&#10022;&nbsp;&nbsp;Show Me How She Did It</a>
+                <p class="cta-note">Join thousands of women who found their missing piece.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 &middot; All Rights Reserved &middot; Privacy Policy &middot; Disclaimer &middot; Results may vary</p>
+        </footer>
+
+        <script>
+            const obs = new IntersectionObserver(
+                (es) =>
+                    es.forEach((e) => {
+                        if (e.isIntersecting) e.target.classList.add("in");
+                    }),
+                { threshold: 0.1 }
+            );
+            document.querySelectorAll(".sr").forEach((el) => obs.observe(el));
+        </script>
+    </body>
+
+    <script>
+        window.clickbank = {
+            vendor: "vkasina",
+        };
+    </script>
+    <script src="https://scripts.clickbank.net/hop.min.js" defer></script>
+</html>

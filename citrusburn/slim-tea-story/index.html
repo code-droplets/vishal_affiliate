@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Doctor Was Shocked. I Wasn't Even Trying.</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Z79VC6SRH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-6Z79VC6SRH");
+        </script>
+
+        <!-- Meta Pixel Code -->
+        <script>
+            !(function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = "2.0";
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+            fbq("init", "2650150875370200");
+            fbq("track", "PageView");
+        </script>
+        <noscript><img height="1" width="1" style="display: none" src="https://www.facebook.com/tr?id=2650150875370200&ev=PageView&noscript=1" /></noscript>
+        <style>
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --bg: #f8f7f4;
+                --white: #ffffff;
+                --ink: #1c1c1a;
+                --body: #343430;
+                --muted: #888884;
+                --line: #e6e4de;
+                --red: #c0392b;
+                --red-bg: #fef2f1;
+                --green: #1e6b40;
+                --green-bg: #eef7f2;
+                --cta: #d4380d;
+                --cta2: #b32d08;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "DM Sans", sans-serif;
+                background: var(--bg);
+                color: var(--body);
+                font-size: 17px;
+                line-height: 1.75;
+                display: flex;
+                flex-direction: column;
+                /* justify-content: center; */
+                align-items: center;
+                background-color: white;
+            }
+
+            /* ── TOP STRIP ── */
+            .strip {
+                background: var(--ink);
+                color: #fff;
+                text-align: center;
+                padding: 9px 16px;
+                font-size: 0.73rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            .strip em {
+                color: #f5a623;
+                font-style: normal;
+            }
+
+            /* ── WRAPPER ── */
+            
+            /* ── HERO ── */
+            .hero {
+                background: var(--white);
+                padding: 44px 20px 32px;
+                text-align: center;
+                border-bottom: 1px solid var(--line);
+            }
+            .badge {
+                display: inline-block;
+                background: var(--red-bg);
+                color: var(--red);
+                font-size: 0.7rem;
+                font-weight: 700;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                padding: 4px 12px;
+                border-radius: 2px;
+                margin-bottom: 20px;
+            }
+            .hero h1 {
+                font-family: "Lora", serif;
+                font-size: clamp(1.65rem, 5vw, 2.45rem);
+                font-weight: 700;
+                line-height: 1.18;
+                color: var(--ink);
+                letter-spacing: -0.015em;
+                margin-bottom: 14px;
+            }
+            .hero h1 em {
+                font-style: italic;
+                color: var(--red);
+            }
+            .hero .sub {
+                font-size: 0.97rem;
+                color: var(--muted);
+                max-width: 480px;
+                margin: 0 auto 18px;
+            }
+            .byline {
+                font-size: 0.8rem;
+                color: var(--muted);
+            }
+            .byline strong {
+                color: var(--body);
+            }
+
+            /* ── BODY ── */
+            .body-copy {
+                background: var(--white);
+                padding: 36px 20px 0;
+                max-width: 700px;
+            }
+            .body-copy p {
+                font-size: 1.05rem;
+                color: var(--body);
+                line-height: 1.82;
+                margin-bottom: 20px;
+            }
+            .body-copy strong {
+                color: var(--ink);
+            }
+
+            /* short punchy lines */
+            .punch {
+                font-family: "Lora", serif;
+                font-size: 1.18rem;
+                font-style: italic;
+                color: var(--ink);
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            /* ── PULL QUOTE ── */
+            .pq {
+                border-left: 3px solid var(--red);
+                padding: 14px 20px;
+                margin: 28px 0;
+                background: var(--red-bg);
+                border-radius: 0 4px 4px 0;
+            }
+            .pq p {
+                font-family: "Lora", serif;
+                font-size: 1.08rem;
+                font-style: italic;
+                color: var(--ink);
+                margin: 0 !important;
+                line-height: 1.6;
+            }
+
+            /* ── IMAGE ── */
+            .img-wrap {
+                margin: 28px -20px;
+                padding: 20px;
+            }
+            .img-wrap img {
+                width: 100%;
+                /* display: block; */
+                object-fit: cover;
+                height: auto;
+                border-radius: 10px;
+            }
+            .img-cap {
+                text-align: center;
+                font-size: 0.78rem;
+                color: var(--muted);
+                font-style: italic;
+                padding: 7px 20px 0;
+            }
+
+            /* ── STAT ROW ── */
+            .stats {
+                display: flex;
+                gap: 0;
+                margin: 28px 0;
+                border: 1px solid var(--line);
+                border-radius: 6px;
+                overflow: hidden;
+                background: var(--white);
+            }
+            .stat {
+                flex: 1;
+                text-align: center;
+                padding: 18px 12px;
+                border-right: 1px solid var(--line);
+            }
+            .stat:last-child {
+                border-right: none;
+            }
+            .stat .num {
+                font-family: "Lora", serif;
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: var(--red);
+                line-height: 1;
+                display: block;
+                margin-bottom: 4px;
+            }
+            .stat .lbl {
+                font-size: 0.72rem;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: 0.07em;
+                font-weight: 600;
+            }
+
+            /* ── CHECK LIST (short) ── */
+            .checks {
+                background: var(--green-bg);
+                border: 1px solid #b8dfc8;
+                border-radius: 6px;
+                padding: 20px 22px;
+                margin: 28px 0;
+            }
+            .checks p {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 0.97rem;
+                color: var(--body);
+                line-height: 1.55;
+                margin-bottom: 10px !important;
+            }
+            .checks p:last-child {
+                margin-bottom: 0 !important;
+            }
+            .checks p::before {
+                content: "✓";
+                color: var(--green);
+                font-weight: 700;
+                flex-shrink: 0;
+                margin-top: 1px;
+            }
+
+            /* ── TESTIMONIAL ── */
+            .testi {
+                background: var(--bg);
+                border: 1px solid var(--line);
+                border-radius: 6px;
+                padding: 20px 22px;
+                margin: 28px 0;
+            }
+            .testi .stars {
+                color: #f5a623;
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+            .testi blockquote {
+                font-family: "Lora", serif;
+                font-style: italic;
+                font-size: 1rem;
+                color: var(--ink);
+                line-height: 1.6;
+                margin-bottom: 12px;
+            }
+            .testi .who {
+                font-size: 0.8rem;
+                color: var(--muted);
+                font-weight: 600;
+            }
+            .testi .who strong {
+                color: var(--body);
+            }
+
+            /* ── HR ── */
+            hr {
+                border: none;
+                border-top: 1px solid var(--line);
+                margin: 28px 0;
+            }
+
+            /* ── CTA ── */
+            .cta-wrap {
+                text-align: center;
+                padding: 8px 0 28px;
+            }
+            .cta-btn {
+                display: inline-block;
+                background: var(--cta);
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.05rem;
+                padding: 17px 34px;
+                border-radius: 4px;
+                letter-spacing: 0.01em;
+                box-shadow: 0 6px 22px rgba(212, 56, 13, 0.32);
+                transition: background 0.2s, transform 0.18s;
+                line-height: 1.3;
+            }
+            .cta-btn:hover {
+                background: var(--cta2);
+                transform: translateY(-2px);
+            }
+            .cta-note {
+                font-size: 0.78rem;
+                color: var(--muted);
+                margin-top: 9px;
+            }
+            .cta-note span {
+                color: var(--green);
+                font-weight: 700;
+            }
+
+            /* ── GUARANTEE ── */
+            .gtee {
+                display: flex;
+                gap: 14px;
+                align-items: flex-start;
+                background: var(--white);
+                border: 2px solid var(--green);
+                border-radius: 6px;
+                padding: 20px;
+                margin: 28px 0;
+            }
+            .gtee .ico {
+                font-size: 2rem;
+                flex-shrink: 0;
+            }
+            .gtee h3 {
+                font-family: "Lora", serif;
+                font-size: 1rem;
+                color: var(--green);
+                margin-bottom: 5px;
+            }
+            .gtee p {
+                font-size: 0.88rem !important;
+                color: var(--muted) !important;
+                margin: 0 !important;
+                line-height: 1.55;
+            }
+
+            /* ── FOOTER DISCLAIMER ── */
+            .disc {
+                border-top: 1px solid var(--line);
+                padding: 24px 20px 36px;
+                background: var(--white);
+            }
+            .disc p {
+                font-size: 0.72rem;
+                color: #bbb;
+                text-align: center;
+                line-height: 1.6;
+            }
+
+            /* ── MOBILE ── */
+            @media (max-width: 540px) {
+                .img-wrap img {
+                    height: auto;
+                }
+                .stats {
+                    flex-direction: column;
+                }
+                .stat {
+                    border-right: none;
+                    border-bottom: 1px solid var(--line);
+                }
+                .stat:last-child {
+                    border-bottom: none;
+                }
+                .cta-btn {
+                    font-size: 0.97rem;
+                    padding: 15px 24px;
+                }
+                .gtee {
+                    flex-direction: column;
+                    gap: 8px;
+                }
+            }
+
+            /* ── FADE-IN ── */
+            @keyframes up {
+                from {
+                    opacity: 0;
+                    transform: translateY(18px);
+                }
+                to {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+            .hero {
+                animation: up 0.65s ease both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="strip">⚠️ <em>87,000+ people</em> are doing this instead of blood pressure pills</div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="badge">💔 Personal Health Story</div>
+            <h1>My Doctor Was Shocked.<br /><em>I Wasn't Even Trying.</em></h1>
+            <p class="sub">I lost 34 lbs and dropped my blood pressure from 164/98 to 122/79 — with one cup of tea every morning.</p>
+            <p class="byline">By <strong>Sandra M., 52</strong> · Columbus, Ohio · March 2025</p>
+        </div>
+
+        <!-- ARTICLE -->
+        <div class="body-copy">
+            <div class="w">
+                <p>Six months ago I was on two blood pressure medications and crying in a Walmart parking lot because my jeans wouldn't button.</p>
+
+                <p>I don't say that to be dramatic. I say it because I know some of you are <em>there right now.</em></p>
+
+                <p>The fatigue. The brain fog. The number on the scale that won't move no matter what you try. The quiet fear that your body is slowly giving up on you.</p>
+
+                <p class="punch">I was there. And then something changed.</p>
+            </div>
+
+            <!-- IMG 1 -->
+            <div class="img-wrap">
+                <img src="./1.png" alt="Woman exhausted, overwhelmed" />
+            </div>
+            <div class="img-cap">This is where I was. Exhausted. Medicated. Done trying.</div>
+
+            <div class="w">
+                <p>My cardiologist had just told me my blood pressure was at <strong>164/98</strong> — dangerously high. He added a second medication. I went home, sat in my car, and didn't even go inside for 20 minutes.</p>
+
+                <p>The pills made me dizzy. My ankles swelled. I had a cough that wouldn't quit. And I was still getting heavier.</p>
+
+                <div class="pq">
+                    <p>"I was doing everything right and getting worse. That's when I started questioning everything."</p>
+                </div>
+
+                <p>A friend texted me a video about something called <strong>homocysteine</strong> — a toxic compound that builds up in your arteries, spikes blood pressure, and literally locks your body into fat-storage mode.</p>
+
+                <p>I'd never heard of it. My doctor had never mentioned it.</p>
+
+                <p>But apparently, over <strong>40% of people</strong> with stubborn belly fat and high blood pressure have elevated homocysteine — and have no idea.</p>
+
+                <p>The video mentioned a tea blend formulated around specific botanicals shown in studies to flush homocysteine and reactivate the body's natural fat-burning. It was called <strong>CardioSlim Tea.</strong></p>
+
+                <p>I rolled my eyes. Then I watched the free video anyway.</p>
+
+                <p>Then I ordered it.</p>
+
+                <hr />
+            </div>
+
+            <!-- IMG 2 -->
+            <div class="img-wrap">
+                <img src="./2.png" alt="Morning tea ritual" />
+            </div>
+            <div class="img-cap">One cup. Every morning. That's the entire ritual.</div>
+
+            <div class="w">
+                <p>The first week — nothing dramatic. But the taste was surprisingly lovely. Earthy, warm, a little floral. Not medicine. Actually something I looked forward to.</p>
+
+                <p>Week two — I slept through the night for the first time in months.</p>
+
+                <p>Week three — I stepped on the scale. <strong>Down 9 lbs.</strong> I hadn't changed a single thing I was eating.</p>
+
+                <div class="pq">
+                    <p>"My doctor stared at the blood pressure monitor. Then stared at me. '131/82?' she said. 'What are you doing differently?'"</p>
+                </div>
+
+                <p>By month three — <strong>34 lbs gone. Blood pressure: 122/79.</strong> She's already talking about reducing my medication.</p>
+
+                <!-- STATS -->
+                <div class="stats">
+                    <div class="stat"><span class="num">34 lbs</span><span class="lbl">Lost</span></div>
+                    <div class="stat"><span class="num">↓42 pts</span><span class="lbl">BP Drop</span></div>
+                    <div class="stat"><span class="num">90 days</span><span class="lbl">To See It</span></div>
+                </div>
+
+                <p>I'm not a miracle. I'm just someone who finally found the thing that actually worked.</p>
+
+                <!-- TESTIMONIAL 1 -->
+                <div class="testi">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Lost 28 lbs. BP went from 158/96 to 119/74. My doctor used the word 'remarkable.' I've never felt this alive in my 60s."</blockquote>
+                    <div class="who"><strong>Linda K.</strong> · Age 58 · Seattle · Verified Buyer</div>
+                </div>
+
+                <hr />
+
+                <p>Here's what CardioSlim Tea actually does — in plain English, not science-speak:</p>
+
+                <div class="checks">
+                    <p>Flushes homocysteine from your arteries so blood can flow freely again</p>
+                    <p>Switches off the "fat-storage panic mode" that keeps weight locked in</p>
+                    <p>Naturally lowers blood pressure — without the dizzy spells or dry cough</p>
+                    <p>Gives you steady, clean energy all day — no caffeine, no crash</p>
+                    <p>Works with your body, not against it — 100% botanical, zero stimulants</p>
+                </div>
+            </div>
+
+            <!-- IMG 3 -->
+            <div class="img-wrap">
+                <img src="./3.png" alt="Woman energetic, transformed" />
+            </div>
+            <div class="img-cap">Three months later. Different person. Same jeans — three sizes smaller.</div>
+
+            <div class="w">
+                <!-- TESTIMONIAL 2 -->
+                <div class="testi">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"I was skeptical — I've tried everything. But within 6 weeks I lost 22 lbs and my BP dropped 38 points. My husband started it too. We both feel 10 years younger."</blockquote>
+                    <div class="who"><strong>Patricia H.</strong> · Age 55 · Phoenix · Verified Buyer</div>
+                </div>
+
+                <p>The video they put together explains the whole science behind it — why homocysteine is the real culprit, how the botanicals fix it, and why nothing else has worked for you until now.</p>
+
+                <p>It's free. It's 4 minutes. And honestly — it might be the most important 4 minutes you spend this year.</p>
+
+                <!-- MID CTA -->
+                <div class="cta-wrap">
+                    <a href="https://hop.clickbank.net/?affiliate=vkasina&vendor=cardioslim&op=vsl&tid=tracking" class="cta-btn"> 👉 TAP HERE TO WATCH VIDEO  </a>
+                </div>
+
+               
+
+                <p>If your body has been sending you warnings — the fatigue, the numbers at the doctor, the clothes that don't fit — don't wait until those warnings get louder.</p>
+
+                <p>Give yourself 90 days. That's it. That's all I did.</p>
+
+                <p style="font-family: 'Lora', serif; font-style: italic; font-size: 1rem; color: var(--ink)">— Sandra M., 52, Ohio</p>
+
+                <hr />
+
+                <!-- FINAL CTA -->
+                <div class="cta-wrap">
+                    <a href="https://hop.clickbank.net/?affiliate=vkasina&vendor=cardioslim&op=vsl&tid=tracking" class="cta-btn"> ▶ TAP HERE TO WATCH VIDEO </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="disc">
+            <div class="w">
+                <p>These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Results vary. Individual results are not guaranteed and depend on diet, exercise, and health conditions. Always consult your physician before starting any supplement. This page contains affiliate links. ClickBank® is a registered trademark of Click Sales, Inc.</p>
+            </div>
+        </div>
+    </body>
+</html>

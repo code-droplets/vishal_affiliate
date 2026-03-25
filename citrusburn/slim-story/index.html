@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Doctors Can't Explain Why This Ancient Tea Is Emptying Pharmacy Shelves</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Z79VC6SRH"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-6Z79VC6SRH");
+        </script>
+
+        <!-- Meta Pixel Code -->
+        <script>
+            !(function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = "2.0";
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+            fbq("init", "2650150875370200");
+            fbq("track", "PageView");
+            
+        </script>
+        <noscript><img height="1" width="1" style="display: none" src="https://www.facebook.com/tr?id=2650150875370200&ev=PageView&noscript=1" /></noscript>
+        <style>
+            *,
+            *::before,
+            *::after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --bg: #f5f4f0;
+                --white: #ffffff;
+                --ink: #111110;
+                --body: #2e2e2c;
+                --muted: #888884;
+                --line: #e2e0d8;
+                --red: #cc2200;
+                --red-bg: #fff1ee;
+                --green: #1a6e3c;
+                --gold: #d4880a;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "DM Sans", sans-serif;
+                background: var(--bg);
+                color: var(--body);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
+                align-items: center ;
+            }
+
+            /* ── TOP TICKER ── */
+            .ticker {
+                background: var(--red);
+                color: #fff;
+                text-align: center;
+                padding: 9px 16px;
+                font-size: 0.73rem;
+                font-weight: 700;
+                letter-spacing: 0.11em;
+                text-transform: uppercase;
+            }
+            .ticker em {
+                font-style: normal;
+                color: #ffd580;
+            }
+
+            /* ── PAGE WRAPPER ── */
+            .page {
+                max-width: 720px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center ;
+            }
+
+            /* ── EYEBROW ── */
+            .eyebrow {
+                text-align: center;
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin-bottom: 20px;
+            }
+            .eyebrow span {
+                color: var(--red);
+                background: var(--red-bg);
+                padding: 3px 10px;
+                border-radius: 2px;
+            }
+
+            /* ── MAIN HEADLINE ── */
+            .headline {
+                font-family: "Lora", serif;
+                font-size: clamp(1.7rem, 4.8vw, 2.7rem);
+                font-weight: 700;
+                line-height: 1.18;
+                color: var(--ink);
+                text-align: center;
+                letter-spacing: -0.015em;
+                margin-bottom: 14px;
+                margin-top: 14px;
+
+            }
+            .headline em {
+                font-style: italic;
+                color: var(--red);
+            }
+
+            /* ── SUBHEADLINE ── */
+            .sub {
+                text-align: center;
+                font-size: 1.05rem;
+                color: var(--muted);
+                line-height: 1.65;
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+
+            /* ── VIDEO THUMBNAIL ── */
+            .video-outer {
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+
+            .video-thumb {
+                display: block;
+                width: 100%;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+                transition: transform 0.35s ease, filter 0.35s ease;
+            }
+            .video-outer:hover .video-thumb {
+                transform: scale(1.015);
+                filter: brightness(0.88);
+            }
+
+            /* dark gradient overlay */
+            .video-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.42) 100%);
+                pointer-events: none;
+            }
+
+            /* top-left "BREAKING" badge on video */
+            .vid-badge {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                background: var(--red);
+                color: #fff;
+                font-size: 0.66rem;
+                font-weight: 700;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                padding: 4px 10px;
+                border-radius: 2px;
+            }
+
+            /* duration badge */
+            .vid-duration {
+                position: absolute;
+                bottom: 66px;
+                right: 14px;
+                background: rgba(0, 0, 0, 0.78);
+                color: #fff;
+                font-size: 0.76rem;
+                font-weight: 600;
+                padding: 3px 8px;
+                border-radius: 3px;
+                letter-spacing: 0.04em;
+            }
+
+            /* PLAY BUTTON */
+
+            /* ── SOCIAL PROOF BAR ── */
+            .proof-bar {
+                display: flex;
+                justify-content: center;
+                gap: 0;
+                margin: 0 auto 36px;
+                max-width: 580px;
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .proof-item {
+                flex: 1;
+                text-align: center;
+                padding: 16px 10px;
+                border-right: 1px solid var(--line);
+            }
+            .proof-item:last-child {
+                border-right: none;
+            }
+            .proof-num {
+                font-family: "Lora", serif;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--red);
+                display: block;
+                line-height: 1;
+                margin-bottom: 4px;
+            }
+            .proof-label {
+                font-size: 0.68rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: var(--muted);
+            }
+
+            /* ── 3 CURIOSITY BULLETS ── */
+            .bullets {
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                padding: 24px 26px;
+                margin-bottom: 20px;
+            }
+            .bullets-title {
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin-bottom: 16px;
+            }
+            .bullet {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 14px;
+                font-size: 0.97rem;
+                line-height: 1.55;
+                color: var(--body);
+            }
+            .bullet:last-child {
+                margin-bottom: 0;
+            }
+            .bullet-icon {
+                width: 22px;
+                height: 22px;
+                background: var(--red-bg);
+                color: var(--red);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.7rem;
+                font-weight: 700;
+                flex-shrink: 0;
+                margin-top: 1px;
+            }
+
+            /* ── MINI TESTIMONIAL ── */
+            .mini-testi {
+                background: #f0f7f3;
+                border: 1px solid #b8dfc8;
+                border-radius: 8px;
+                padding: 18px 22px;
+                display: flex;
+                gap: 14px;
+                align-items: flex-start;
+                margin-bottom: 20px;
+            }
+            .testi-avi {
+                width: 44px;
+                height: 44px;
+                background: #c8e8d6;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+            .testi-text p {
+                font-size: 0.92rem;
+                font-style: italic;
+                color: var(--ink);
+                line-height: 1.55;
+                margin-bottom: 6px;
+            }
+            .testi-text span {
+                font-size: 0.75rem;
+                color: var(--muted);
+                font-weight: 600;
+            }
+            .testi-text span strong {
+                color: var(--body);
+            }
+
+            /* ── BIG CTA BUTTON ── */
+            .cta-wrap {
+                text-align: center;
+                /* margin: 0 auto 16px; */
+            }
+            .cta-btn {
+                display: block;
+                width: 100%;
+                background: var(--red);
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.08rem;
+                padding: 18px 28px;
+                border-radius: 6px;
+                letter-spacing: 0.01em;
+                box-shadow: 0 6px 24px rgba(204, 34, 0, 0.3);
+                transition: background 0.2s, transform 0.18s;
+                line-height: 1.35;
+            }
+            .cta-btn:hover {
+                background: #b01d00;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 32px rgba(204, 34, 0, 0.38);
+            }
+            .cta-btn .btn-sub {
+                display: block;
+                font-size: 0.76rem;
+                font-weight: 500;
+                opacity: 0.82;
+                margin-top: 3px;
+            }
+            .cta-note {
+                font-size: 0.76rem;
+                color: var(--muted);
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+            .cta-note span {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+            .cta-note .dot {
+                color: var(--green);
+                font-weight: 700;
+            }
+
+            /* ── GUARANTEE STRIP ── */
+            .gtee-strip {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                background: var(--white);
+                border: 1px solid var(--line);
+                border-radius: 6px;
+                padding: 14px 20px;
+                margin: 0 auto 36px;
+                max-width: 580px;
+            }
+            .gtee-strip .shield {
+                font-size: 1.5rem;
+            }
+            .gtee-strip p {
+                font-size: 0.82rem;
+                color: var(--body);
+                line-height: 1.45;
+            }
+            .gtee-strip p strong {
+                color: var(--green);
+            }
+
+            /* ── DISCLAIMER ── */
+            .disc {
+                border-top: 1px solid var(--line);
+                padding-top: 24px;
+                text-align: center;
+            }
+            .disc p {
+                font-size: 0.7rem;
+                color: #bbb;
+                line-height: 1.6;
+                max-width: 580px;
+                margin: 0 auto;
+            }
+
+            /* ── PULSE ANIMATION on play btn ── */
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(204, 34, 0, 0.5);
+                }
+                70% {
+                    box-shadow: 0 0 0 16px rgba(204, 34, 0, 0);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba(204, 34, 0, 0);
+                }
+            }
+            .play-btn {
+                animation: pulse 2s infinite;
+            }
+
+            /* ── FADE IN ── */
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(22px);
+                }
+                to {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+            .headline {
+                animation: fadeUp 0.55s ease both 0.05s;
+            }
+            .sub {
+                animation: fadeUp 0.55s ease both 0.15s;
+            }
+            .video-outer {
+                animation: fadeUp 0.6s ease both 0.2s;
+            }
+            .proof-bar {
+                animation: fadeUp 0.55s ease both 0.3s;
+            }
+            .bullets {
+                animation: fadeUp 0.55s ease both 0.35s;
+            }
+
+            /* ── MOBILE ── */
+            @media (max-width: 560px) {
+                .page {
+                    padding: 32px 14px 48px;
+                }
+                .play-btn {
+                    width: 60px;
+                    height: 60px;
+                }
+                .play-btn svg {
+                    width: 22px;
+                    height: 22px;
+                }
+                .proof-bar {
+                    flex-wrap: wrap;
+                }
+                .proof-item {
+                    flex: 1 1 45%;
+                    border-bottom: 1px solid var(--line);
+                }
+                .proof-item:nth-child(3),
+                .proof-item:nth-child(4) {
+                    border-bottom: none;
+                }
+                .mini-testi {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                .cta-btn {
+                    font-size: 1rem;
+                    padding: 16px 18px;
+                }
+                .cta-note {
+                    gap: 8px;
+                }
+                .gtee-strip {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- TICKER -->
+        <div class="ticker">⚠️ WARNING: <em>Limited Supply</em> — Over 87,000 Bottles Already Claimed This Month</div>
+
+        <div class="page">
+            <!-- EYEBROW -->
+
+            <!-- HEADLINE -->
+            <h1 class="headline">
+                Doctors Can't Explain Why This<br />
+                <em>Ancient Morning Tea</em><br />
+                Is Emptying Pharmacy Shelves
+            </h1>
+
+            <!-- SUB -->
+            <p class="sub">Watch this short video to discover the bizarre heart-health trick that 87,000+ people are using instead of expensive prescriptions — and why cardiologists are speechless.</p>
+
+            <!-- VIDEO THUMBNAIL (clicks to VSL) -->
+            <a href="https://hop.clickbank.net/?affiliate=vkasina&vendor=cardioslim&op=vsl&tid=tracking" class="video-outer" rel="noopener" title="Click to watch the free video">
+                <img class="video-thumb" src="./1.png" />
+            </a>
+
+            <!-- CLICK HINT -->
+
+
+            <!-- CURIOSITY BULLETS -->
+            <div class="bullets">
+                <div class="bullets-title">🎯 Inside This Free Video You'll Discover...</div>
+                <div class="bullet">
+                    <div class="bullet-icon">1</div>
+                    <div>The <strong>real reason</strong> your blood pressure stays high — it's not salt, stress, or genetics (most doctors don't test for this)</div>
+                </div>
+                <div class="bullet">
+                    <div class="bullet-icon">2</div>
+                    <div>The <strong>ancient botanical secret</strong> that flushes the hidden compound clogging your arteries and locking in belly fat</div>
+                </div>
+                <div class="bullet">
+                    <div class="bullet-icon">3</div>
+                    <div>Why <strong>one cup every morning</strong> is doing what years of dieting and medication couldn't — and how to try it risk-free</div>
+                </div>
+            </div>
+
+            <!-- MINI TESTIMONIAL -->
+            <div class="mini-testi">
+                <div class="testi-avi">👩</div>
+                <div class="testi-text">
+                    <p>"I watched the video on a Tuesday. Ordered the same day. By week three I was down 9 lbs and my blood pressure reading finally came in under 130. My doctor said whatever I'm doing — keep doing it."</p>
+                    <span><strong>Linda K.</strong> · Age 58 · Seattle, WA · ⭐⭐⭐⭐⭐ Verified Buyer</span>
+                </div>
+            </div>
+
+            <!-- BIG CTA -->
+            <div class="cta-wrap">
+                <a href="https://hop.clickbank.net/?affiliate=vkasina&vendor=cardioslim&op=vsl&tid=tracking" class="cta-btn" rel="noopener">
+                    ▶ &nbsp;Watch The Free Video Now — Before It's Taken Down
+                </a>
+               
+            </div>
+
+           
+            <!-- DISCLAIMER -->
+            <div class="disc">
+                <p>These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Results vary per individual based on diet, exercise, and health conditions. This page contains affiliate links. ClickBank® is a registered trademark of Click Sales, Inc.</p>
+            </div>
+        </div>
+        <!-- /page -->
+    </body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The forgotten list · a story about brain fog</title>
+        <!-- elegant font system -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
+        <!-- subtle icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #f2efe8; /* soft aged paper */
+                font-family: "Quicksand", sans-serif;
+                color: #2d3a3a;
+                line-height: 1.6;
+            }
+
+            .story-wrap {
+                max-width: 1000px;
+                margin: 2rem auto;
+                padding: 1.5rem;
+                position: relative;
+            }
+
+            /* main card – calm, elevated */
+            .story-panel {
+                background: rgba(255, 253, 250, 0.85);
+                backdrop-filter: blur(3px);
+                border-radius: 3rem 3rem 3rem 3rem;
+                padding: 2.8rem 2.8rem 3.5rem;
+                box-shadow: 0 30px 45px -25px #7d6b5b, 0 0 0 1px rgba(240, 235, 225, 0.8);
+                transition: box-shadow 0.3s;
+            }
+
+            @media (max-width: 600px) {
+                .story-panel {
+                    padding: 2rem 1.5rem;
+                }
+            }
+
+            /* headline style */
+            .title-block {
+                margin-bottom: 2rem;
+            }
+
+            .title-block h1 {
+                font-family: "Source Serif 4", serif;
+                font-size: 3.2rem;
+                font-weight: 500;
+                letter-spacing: -0.02em;
+                color: #2a4b4c;
+                line-height: 1.1;
+            }
+
+            .title-block .sub {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                color: #7c9a9a;
+                font-weight: 300;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+                margin-top: 0.3rem;
+            }
+
+            .title-block .sub i {
+                font-size: 0.6rem;
+                color: #a6c1c1;
+            }
+
+            /* image placeholders – smooth, organic */
+            .image-moment {
+                margin: 2.8rem 0 2.2rem;
+                border-radius: 2.2rem;
+                overflow: hidden;
+                box-shadow: 0 20px 35px -16px #5f5348, 0 0 0 1px #f0e4d9 inset;
+                transition: transform 0.3s ease, box-shadow 0.4s;
+                background: #e5dbd1;
+            }
+
+            .image-moment:hover {
+                transform: scale(1.01) translateY(-3px);
+                box-shadow: 0 30px 45px -18px #4f443b, 0 0 0 1px #fffbf5 inset;
+            }
+
+            .image-moment img {
+                width: 100%;
+                height: auto;
+                display: block;
+                background: #d7ccc0; /* warm placeholder */
+            }
+
+            .img-caption {
+                font-size: 0.7rem;
+                letter-spacing: 1.5px;
+                color: #6b7f7e;
+                padding: 0.6rem 1.5rem 0.2rem;
+                background: transparent;
+                border-bottom: 1px dashed #d1c7bc;
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .img-caption i {
+                color: #9ab7b5;
+            }
+
+            /* story paragraphs */
+            .story-text p {
+                font-size: 1.15rem;
+                font-weight: 350;
+                color: #2c3a39;
+                margin-bottom: 1.6rem;
+            }
+
+            .story-text p.emphasis {
+                font-size: 1.35rem;
+                font-family: "Source Serif 4", serif;
+                color: #20544e;
+                border-left: 4px solid #b5cfcc;
+                padding-left: 1.5rem;
+            }
+
+            /* pull quote — brain fog turning point */
+            .insight-quote {
+                background: #ecf1ef;
+                border-radius: 3rem 1rem 3rem 1rem;
+                padding: 2.2rem 2.5rem;
+                margin: 2.5rem 0;
+                border: 1px solid #d3e0dc;
+                box-shadow: inset 0 0 0 2px #f9fcfb, 0 20px 30px -22px #375954;
+                font-family: "Source Serif 4", serif;
+                font-size: 1.8rem;
+                font-weight: 400;
+                line-height: 1.4;
+                color: #1f4e4b;
+                text-align: center;
+            }
+            @media screen and (max-width: 500px) {
+                .insight-quote {
+                    font-size: 1.4rem;
+                    padding: 1.5rem 1rem;
+                }
+                
+            }
+
+            .insight-quote i {
+                color: #8cb5b0;
+                margin: 0 0.6rem;
+                font-size: 1.6rem;
+                opacity: 0.7;
+            }
+
+            /* small decorative split */
+            .grace-divider {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+
+            .grace-divider .bar {
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #c4d5d0, transparent);
+                flex: 1;
+            }
+
+            .grace-divider .dot {
+                background: #aac2be;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+            }
+
+            /* CTA section – gentle but persuasive, with guarantee highlight */
+            .cta-grace {
+                background: rgba(255, 255, 255, 0.5);
+                backdrop-filter: blur(6px);
+                border-radius: 4rem 4rem 4rem 4rem;
+                padding: 3rem 2.5rem;
+                margin: 4rem 0 1.2rem;
+                border: 1px solid #f0ebe2;
+                box-shadow: 0 30px 40px -28px #2e5b56, inset 0 1px 4px #fffefa;
+                text-align: center;
+            }
+
+            .cta-grace p {
+                font-size: 1.35rem;
+                font-weight: 320;
+                max-width: 600px;
+                margin: 0 auto 2rem;
+                color: #254e48;
+            }
+
+            .cta-grace .guarantee-badge {
+                background: #254e48;
+                color: #f1f6f3;
+                padding: 0.4rem 1.2rem;
+                border-radius: 60px;
+                font-size: 0.9rem;
+                display: inline-block;
+                margin-bottom: 1.8rem;
+                letter-spacing: 0.5px;
+                border: 1px solid #97b7b0;
+            }
+
+            .btn-soft {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.8rem;
+                background: #2b5f5a;
+                color: white;
+                font-weight: 500;
+                font-size: 1.6rem;
+                padding: 1.2rem 3.5rem;
+                border-radius: 60px;
+                text-decoration: none;
+                border: 1px solid #55857e;
+                box-shadow: 0 25px 30px -20px #1a3f3b, 0 2px 0 0 #c9e2db inset;
+                transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+            }
+            @media screen and (max-width: 500px) {
+                .btn-soft {
+                    font-size: 1.3rem;
+                    padding: 1rem 1rem;
+                }
+                
+            }
+
+            .btn-soft:hover {
+                background: #1d4944;
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 35px 40px -20px #173e3a;
+            }
+
+            .btn-soft i {
+                font-size: 1.4rem;
+                transition: transform 0.2s;
+            }
+
+            .btn-soft:hover i {
+                transform: translateX(7px);
+            }
+
+            .fine-print {
+                margin-top: 1.2rem;
+                font-size: 0.8rem;
+                color: #7d928e;
+            }
+
+            /* image hint row */
+            .image-notes {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+                margin-top: 2.5rem;
+                color: #7b8f8b;
+                font-size: 0.8rem;
+            }
+
+            .image-notes span {
+                background: rgba(200, 212, 207, 0.3);
+                padding: 0.2rem 1.2rem;
+                border-radius: 40px;
+                border: 0.5px solid #bfd2cc;
+            }
+
+            /* simple fade */
+            .fade-in {
+                animation: fadeUp 0.8s ease forwards;
+            }
+
+            @keyframes fadeUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(15px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="story-wrap">
+            <div class="story-panel fade-in">
+                <!-- title block -->
+                <div class="title-block">
+                    <h1>the forgotten list</h1>
+                    <div class="sub">
+                        <i class="fas fa-circle"></i> a story about fog, focus, and finding my way back
+                        <i class="fas fa-circle"></i>
+                    </div>
+                </div>
+
+                <!-- IMAGE 1: before – mental fog, staring into space -->
+                <div class="image-moment">
+                    <img src="./1.png" alt="woman in her 50s staring blankly, mental fog, lost expression" />
+                </div>
+                <div class="img-caption"><i class="fa-regular fa-image"></i> 52 · staring at the refrigerator, forgetting why</div>
+
+                <!-- story part 1 -->
+                <div class="story-text">
+                    <p class="emphasis">I turned 52 and my brain decided to retire early.</p>
+                    <p>It started small. I'd walk into a room and forget why. I'd lose my keys three times a week. I'd be in the middle of a sentence and suddenly—nothing. The word was just... gone.</p>
+                    <p>I laughed it off at first. "Senior moment," I'd say. But then it started happening during client meetings. I'd forget names I'd known for years. I'd stare at the grocery list I'd just written and feel like it was in another language.</p>
+                    <p>The worst was the afternoon my daughter asked me a simple question about her school project, and I couldn't find the answer. It wasn't that I didn't know—it was that my brain felt like it was wrapped in cotton. Slow. Foggy. Unreliable.</p>
+                    <p>I started writing everything down. Post-its covered my desk, my mirror, the dashboard of my car. But even then, I'd forget to check them.</p>
+                </div>
+
+                <!-- IMAGE 2: post-its, clutter, overwhelmed -->
+                <div class="image-moment">
+                    <img src="./2.png" alt="cluttered desk with sticky notes everywhere, overwhelmed" />
+                </div>
+                <div class="img-caption"><i class="fa-regular fa-image"></i> sticky notes couldn't save me · brain fog took over</div>
+
+                <div class="story-text">
+                    <p>I tried everything. Puzzle apps to "keep my mind sharp." Fish oil. Ginkgo. I even tried one of those expensive online brain training programs. Nothing cut through the fog.</p>
+                    <p>I started dreading social situations because I couldn't keep up with conversations. I felt like I was letting everyone down—my family, my team at work, myself. The worst part? I was only 52. I wasn't supposed to feel like this for another twenty years.</p>
+                </div>
+
+                <!-- elegant quote / turning point -->
+                <div class="insight-quote">
+                    <i class="fas fa-quote-left"></i>
+                    Then a friend said something I'll never forget: "What if it's not aging? What if it's biology?"
+                    <i class="fas fa-quote-right"></i>
+                </div>
+
+                 <div class="cta-grace">
+                   
+                    <!-- main CTA button – exact text requested -->
+                    <a href="https://hop.clickbank.net/?affiliate=vkasina&vendor=getneuro&pg=news" class="btn-soft"> Show Me What She Suggested <i class="fas fa-arrow-right"></i> </a>
+                </div>
+
+                <div class="story-text">
+                    <p>That conversation changed everything. She explained that our brains need specific support as we get older—not just puzzles, but real nutritional support at the cellular level. Things like olive leaf, green tea extract, grape seed... ingredients I'd never linked to my brain before.</p>
+                    <p>I started reading, researching. And for the first time, I found a blend of over 20 natural ingredients designed specifically for aging brains. No stimulants, nothing habit-forming—just targeted nutrition.</p>
+                    <p>I was skeptical. I'd tried so many things. But something about the science made sense. So I gave it a chance.</p>
+                </div>
+
+                <!-- IMAGE 3: after – vibrant, focused, laughing -->
+                <div class="image-moment">
+                    <img src="./3.png" alt="woman laughing, bright eyes, engaged with family, vibrant" />
+                </div>
+                <div class="img-caption"><i class="fa-regular fa-image"></i> 53 · present, focused, unrecognizable (in the best way)</div>
+
+                <div class="story-text">
+                    <p>The first thing I noticed wasn't mental—it was energy. I wasn't crashing at 3 PM anymore. Then, about three weeks in, I was at the grocery store without a list. And I remembered everything.</p>
+                    <p>I almost cried in the produce section.</p>
+                    <p>Slowly, the fog lifted. I started finishing sentences. I stopped apologizing for forgetting names. My daughter looked at me one evening and said, "Mom, you're back."</p>
+                    <p>I hadn't realized how far I'd drifted until I came home.</p>
+                    <p>Now, at 53, I feel sharper than I did at 45. My mind feels clear. My energy is steady. And I don't live in fear of the next blank moment. I'm not hiding behind post-its anymore.</p>
+                    <p>I'm just... me again.</p>
+                </div>
+
+                <div class="image-moment">
+                    <img src="./4.png" alt="woman laughing, bright eyes, engaged with family, vibrant" />
+                </div>
+
+                <!-- subtle divider -->
+                <div class="grace-divider"><span class="dot"></span><span class="bar"></span><span class="dot"></span></div>
+
+                <!-- CTA block with guarantee highlight (180-day) -->
+                <div class="cta-grace">
+                    <div class="guarantee-badge"><i class="fa-regular fa-calendar-check"></i> 180 DAYS · RISK-FREE</div>
+                    <p>You don't have to accept brain fog as "normal." I thought I'd lost my edge forever. I was wrong.</p>
+                    <!-- main CTA button – exact text requested -->
+                    <a href="https://hop.clickbank.net/?affiliate=vkasina&vendor=getneuro&pg=news" class="btn-soft"> Show Me How She Did It <i class="fas fa-arrow-right"></i> </a>
+                    <div class="fine-print"><i class="fa-regular fa-circle-check"></i> natural · non-GMO · no stimulants</div>
+                </div>
+
+                
+            </div>
+            <!-- end story-panel -->
+        </div>
+        <!-- end wrap -->
+    </body>
+</html>
